@@ -1,2 +1,10 @@
-# react-home
-a react project constructure with new react-router4 
+# 基于create-react-app的项目结构
+
+- react-router@4
+- redux
+- react-redux
+- redux-actions
+- 指令创建一级模块
+- 指令创建二级模块
+- 脚手架生成
+- 集成和交付支持
