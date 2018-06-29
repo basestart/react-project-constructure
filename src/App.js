@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import { Header } from './common';
+import { Header as TopMenu } from './common';
 import { Provider } from 'react-redux';
 import { default as store } from './store';
+import { Layout } from 'antd';
+import './App.css';
+const { Header, Footer, Content } = Layout;
 
 class App extends Component {
     constructor(props) {
@@ -22,14 +25,25 @@ class App extends Component {
         return (
             <Provider store={store}>
                 <Router>
-                    <div>
-                        <Header />
-                        {Home && <Route exact path="/" component={Home} />}
-                        {Home && <Route path="/Home" component={Home} />}
-                        {DashBoard && (
-                            <Route path="/DashBoard" component={DashBoard} />
-                        )}
-                    </div>
+                    <Layout style={{display: 'flex'}}>
+                        <Header className="header">
+                            <div className="logo" />
+                            <TopMenu />
+                        </Header>
+                        <Content style={{ padding: '0 50px', flex: 1 }}>
+                            {Home && <Route exact path="/" component={Home} />}
+                            {Home && <Route path="/Home" component={Home} />}
+                            {DashBoard && (
+                                <Route
+                                    path="/DashBoard"
+                                    component={DashBoard}
+                                />
+                            )}
+                        </Content>
+                        <Footer style={{ textAlign: 'center' }}>
+                            powered by <a href="https://github.com/fridego/react-project-constructure" target="blank">fridego</a>
+                        </Footer>
+                    </Layout>
                 </Router>
             </Provider>
         );
