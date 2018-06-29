@@ -1,6 +1,8 @@
-# 基于create-react-app的项目结构
+[![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php) 
+# 基于create-react-app进行改造的项目结构
 
-- react-router@4
+#### todos
+- react-router-dom
 - redux
 - react-redux
 - redux-actions
@@ -8,6 +10,7 @@
 - 指令创建二级模块
 - 脚手架生成
 - 集成和交付支持
+
 
 #### 有关redux-actions
 
