@@ -16,7 +16,7 @@ class Page2 extends Component {
         let {count2} = this.props;
         return (
             <div>
-                <h1>page2</h1>
+                <h1>page2--二级state</h1>
                 <Button onClick={this.handleAdd.bind(this)}> + </Button>
                 <p>
                 {count2}

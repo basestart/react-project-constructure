@@ -32,6 +32,8 @@ class DashBoard extends Component {
                     minHeight: 280
                 }}
             >
+                <h2>DashBoard--一级state</h2>
+                <p>输入内容后回车</p>
                 <Input onPressEnter={this.handleSearch.bind(this)}/>
                 <div>
                     <ul>{todos.map(todo => <li>{todo}</li>)}</ul>

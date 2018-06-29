@@ -27,7 +27,6 @@ class App extends Component {
                 <Router>
                     <Layout style={{display: 'flex'}}>
                         <Header className="header">
-                            <div className="logo" />
                             <TopMenu />
                         </Header>
                         <Content style={{ padding: '0 50px', flex: 1 }}>
