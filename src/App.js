@@ -41,7 +41,7 @@ class App extends Component {
                             )}
                         </Content>
                         <Footer style={{ textAlign: 'center' }}>
-                            powered by <a href="https://github.com/fridego/react-project-constructure" target="blank">fridego</a>
+                            created by <a href="https://github.com/fridego/react-project-constructure" target="blank">fridego</a>
                         </Footer>
                     </Layout>
                 </Router>
