@@ -1,20 +1,34 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
-import { modules } from './modules';
-import { createStore } from 'redux';
-import { Header, Content } from './share';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { Header } from './common';
 import { Provider } from 'react-redux';
-
-let store = createStore(function() {}, {});
+import { default as store } from './store';
 
 class App extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {};
+    }
+    async componentDidMount() {
+        const { default: Home } = await import('./modules/Home');
+        const { default: DashBoard } = await import('./modules/DashBoard');
+        this.setState({
+            Home,
+            DashBoard
+        });
+    }
     render() {
+        let { Home, DashBoard } = this.state;
         return (
             <Provider store={store}>
                 <Router>
                     <div>
                         <Header />
-                        <Content modules={modules} />
+                        {Home && <Route exact path="/" component={Home} />}
+                        {Home && <Route path="/Home" component={Home} />}
+                        {DashBoard && (
+                            <Route path="/DashBoard" component={DashBoard} />
+                        )}
                     </div>
                 </Router>
             </Provider>
