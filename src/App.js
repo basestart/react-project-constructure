@@ -25,7 +25,7 @@ class App extends Component {
         return (
             <Provider store={store}>
                 <Router>
-                    <Layout style={{display: 'flex'}}>
+                    <Layout style={{ display: 'flex' }}>
                         <Header className="header">
                             <TopMenu />
                         </Header>
@@ -40,7 +40,13 @@ class App extends Component {
                             )}
                         </Content>
                         <Footer style={{ textAlign: 'center' }}>
-                            created by <a href="https://github.com/fridego/react-project-constructure" target="blank">fridego</a>
+                            created by{' '}
+                            <a
+                                href="https://github.com/fridego/react-project-constructure"
+                                target="blank"
+                            >
+                                fridego
+                            </a>
                         </Footer>
                     </Layout>
                 </Router>

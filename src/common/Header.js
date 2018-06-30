@@ -32,7 +32,7 @@ export default class Header extends Component {
                 onClick={this.handleClick}
                 selectedKeys={[this.state.current]}
                 mode="horizontal"
-                style={{padding: "0 20px", boxSizing: 'border-box'}}
+                style={{ padding: '0 20px', boxSizing: 'border-box' }}
             >
                 {moduleKeys.map(module => (
                     <Menu.Item key={module}>
