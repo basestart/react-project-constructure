@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { injectReducer } from '../../store';
+import { injectReducer } from 'src/store';
 import { bindActionCreators } from 'redux';
 import { default as reducers, actions } from './store';
 import { Layout, Input } from 'antd';

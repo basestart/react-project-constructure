@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Layout, Menu } from 'antd';
 import { default as reducer } from './store/store';
-import { injectReducer } from '../../store';
+import { injectReducer } from 'src/store';
 import * as components from './components';
 import {Link, Route, Switch} from 'react-router-dom';
 const { Sider, Content } = Layout;

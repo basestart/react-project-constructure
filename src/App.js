@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import { Header as TopMenu } from './common';
 import { Provider } from 'react-redux';
-import { default as store } from './store';
+import { Header as TopMenu } from 'src/common';
 import { Layout } from 'antd';
-import './App.css';
+import { default as store } from 'src/store';
+import 'src/App.css';
 const { Header, Footer, Content } = Layout;
 
 class App extends Component {
@@ -13,8 +13,8 @@ class App extends Component {
         this.state = {};
     }
     async componentDidMount() {
-        const { default: Home } = await import('./modules/Home');
-        const { default: DashBoard } = await import('./modules/DashBoard');
+        const { default: Home } = await import('src/modules/Home');
+        const { default: DashBoard } = await import('src/modules/DashBoard');
         this.setState({
             Home,
             DashBoard

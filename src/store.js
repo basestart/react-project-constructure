@@ -1,7 +1,7 @@
 import { createStore } from 'redux';
 import { combineReducers, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
-import { default as rootReducer } from './common/store';
+import { default as rootReducer } from 'src/common/store';
 import { composeWithDevTools } from 'redux-devtools-extension';
 const initialState = window.config || {};
 
