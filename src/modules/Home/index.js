@@ -11,26 +11,21 @@ export default class Home extends Component {
         injectReducer('Home', reducer);
     }
     render() {
-        return (
+        return ( 
             <Layout
                 style={{
                     padding: '24px 0',
                     background: '#fff'
                 }}
             >
-                <Sider width={200} style={{ background: '#fff' }}>
+                <Sider width={200} style={{ background: '#fff', height: '100%'}} height={100}>
                     <Menu
                         mode="inline"
                         defaultSelectedKeys={['1']}
-                        style={{ height: '100%' }}
+                        style={{height: '100%'}}
                     >
-                        {Object.keys(components).map((comp, index) => (
-                            <Menu.Item key={index + 1}>
-                                <Link key={comp} to={`/Home/${comp}`}>
-                                    {comp}
-                                </Link>
-                            </Menu.Item>
-                        ))}
+                        <Menu.Item key='1'><Link to={`/Home/page1`}> page1</Link></Menu.Item>
+                        <Menu.Item key='2'><Link to={`/Home/page2`}> page2</Link></Menu.Item>
                     </Menu>
                 </Sider>
                 <Content
@@ -40,14 +35,10 @@ export default class Home extends Component {
                     }}
                 >
                     <Switch>
-                        {Object.keys(components).map(comp => (
-                            <Route
-                                exact
-                                path={`/Home/${comp}`}
-                                component={components[comp]}
-                                key={comp}
-                            />
-                        ))}
+                        <Route exact path={`/`} exact component={components.Page1} key='page1'/>
+                        <Route exact path={`/Home`} exact component={components.Page1} key='page1'/>
+                        <Route exact path={`/Home/page1`} component={components.Page1} key='page1'/>
+                        <Route exact path={`/Home/page2`} component={components.Page2} key='page2'/>
                     </Switch>
                 </Content>
             </Layout>

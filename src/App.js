@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import { Header as TopMenu } from 'src/common';
+import { Headers, Footers } from 'src/common';
 import { Layout } from 'antd';
 import { default as store } from 'src/store';
 import 'src/App.css';
-const { Header, Footer, Content } = Layout;
+import { connect } from 'react-redux';
+const { Footer, Content } = Layout;
+
 
 class App extends Component {
     constructor(props) {
@@ -25,30 +27,13 @@ class App extends Component {
         return (
             <Provider store={store}>
                 <Router>
-                    <Layout style={{ display: 'flex' }}>
-                        <Header className="header">
-                            <TopMenu />
-                        </Header>
-                        <Content style={{ padding: '0 50px', flex: 1 }}>
-                            {Home && <Route exact path="/" component={Home} />}
-                            {Home && <Route path="/Home" component={Home} />}
-                            {DashBoard && (
-                                <Route
-                                    path="/DashBoard"
-                                    component={DashBoard}
-                                />
-                            )}
-                        </Content>
-                        <Footer style={{ textAlign: 'center' }}>
-                            created by{' '}
-                            <a
-                                href="https://github.com/fridego/react-project-constructure"
-                                target="blank"
-                            >
-                                fridego
-                            </a>
-                        </Footer>
-                    </Layout>
+                    <div style={{height: '80%'}}>
+                        <Headers/>
+                        {Home && <Route path='/' exact component={Home}/>}
+                        {Home && <Route path='/home' component={Home}/>}
+                        {DashBoard && <Route path='/dashboard' component={DashBoard}/>}
+                        <Footers/>
+                    </div>
                 </Router>
             </Provider>
         );

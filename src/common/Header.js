@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { modules, icons } from '../modules';
 import { Link } from 'react-router-dom';
-import { Menu, Icon } from 'antd';
+import { Menu, Icon, Layout } from 'antd';
+const { Header } = Layout;
 
-export default class Header extends Component {
+
+export default class Headers extends Component {
     constructor(props) {
         super(props);
         this.state = {

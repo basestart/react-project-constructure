@@ -22,26 +22,28 @@ class DashBoard extends Component {
     render() {
         let { todos } = this.props;
         return (
-            <Layout
-                style={{
-                    padding: '24px 0',
-                    background: '#fff'
-                }}
-            >
-                <Content
+            <Content style={{ padding: '0 50px', flex: 1 }}>
+                <Layout
                     style={{
-                        padding: '0 24px',
-                        minHeight: 280
+                        padding: '24px 0',
+                        background: '#fff'
                     }}
                 >
-                    <h2>DashBoard--一级state</h2>
-                    <p>输入内容后回车</p>
-                    <Input onPressEnter={this.handleSearch.bind(this)} />
-                    <div>
-                        <ul>{todos.map(todo => <li>{todo}</li>)}</ul>
-                    </div>
-                </Content>
-            </Layout>
+                    <Content
+                        style={{
+                            padding: '0 24px',
+                            minHeight: 280
+                        }}
+                    >
+                        <h2>DashBoard--一级state</h2>
+                        <p>输入内容后回车</p>
+                        <Input onPressEnter={this.handleSearch.bind(this)} />
+                        <div>
+                            <ul>{todos.map(todo => <li>{todo}</li>)}</ul>
+                        </div>
+                    </Content>
+                </Layout>
+            </Content>
         );
     }
 }

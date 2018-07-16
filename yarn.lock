@@ -6274,7 +6274,7 @@ redux-actions@^2.4.0:
 
 redux-devtools-extension@^2.13.5:
   version "2.13.5"
-  resolved "http://registry.npm.taobao.org/redux-devtools-extension/download/redux-devtools-extension-2.13.5.tgz#3ff34f7227acfeef3964194f5f7fc2765e5c5a39"
+  resolved "https://registry.yarnpkg.com/redux-devtools-extension/-/redux-devtools-extension-2.13.5.tgz#3ff34f7227acfeef3964194f5f7fc2765e5c5a39"
 
 redux-thunk@^2.3.0:
   version "2.3.0"
