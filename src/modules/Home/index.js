@@ -35,9 +35,9 @@ export default class Home extends Component {
                     }}
                 >
                     <Switch>
-                        <Route exact path={`/`} exact component={components.Page1} key='page1'/>
-                        <Route exact path={`/Home`} exact component={components.Page1} key='page1'/>
-                        <Route exact path={`/Home/page1`} component={components.Page1} key='page1'/>
+                        <Route exact path={`/`} component={components.Page1} key='page1'/>
+                        <Route exact path={`/Home`} component={components.Page1} key='page12'/>
+                        <Route exact path={`/Home/page1`} component={components.Page1} key='page13'/>
                         <Route exact path={`/Home/page2`} component={components.Page2} key='page2'/>
                     </Switch>
                 </Content>

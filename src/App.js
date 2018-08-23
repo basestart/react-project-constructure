@@ -2,11 +2,8 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { Headers, Footers } from 'src/common';
-import { Layout } from 'antd';
 import { default as store } from 'src/store';
 import 'src/App.css';
-import { connect } from 'react-redux';
-const { Footer, Content } = Layout;
 
 
 class App extends Component {

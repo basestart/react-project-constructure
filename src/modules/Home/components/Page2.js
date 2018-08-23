@@ -1,11 +1,18 @@
 import React, { Component } from 'react';
 import { Button } from 'antd';
-import PropTypes from 'prop-types';
 import { actions } from '../store/page2';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-class Page2 extends Component {
+@connect(state => {
+    let { Home: { page2: { count2 } = {} } = {} } = state;
+    return { count2 };
+}, dispatch => {
+    return {
+        actions: bindActionCreators(actions, dispatch)
+    };
+})
+export default class Page2 extends Component {
     handleAdd() {
         let {
             actions: { addTodo2 }
@@ -25,22 +32,3 @@ class Page2 extends Component {
     }
 }
 
-function mapStateToProps(state) {
-    let { Home: { page2: { count2 } = {} } = {} } = state;
-    return { count2 };
-}
-
-function mapDispatchToProps(dispatch) {
-    return {
-        actions: bindActionCreators(actions, dispatch)
-    };
-}
-
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(Page2);
-
-Page2.propTypes = {
-    count2: PropTypes.number
-};
